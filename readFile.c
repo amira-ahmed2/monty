@@ -13,7 +13,7 @@ void readFile(FILE *fd)
 
 	for (linNum = 1; getline(&buff, &length, fd) != -1; linNum++)
 	{
-		f = parse_line(buff, linNum, f);
+		f = parseLine(buff, linNum, f);
 	}
 	free(buff);
 }

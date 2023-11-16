@@ -1,47 +1,15 @@
 #include "main.h"
 
 /**
- * parse_line - Separates each line into tokens to determine
- * which function to call
- * @buffer: line from the file
- * @line_number: line number
- * @format:  storage format. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
- * Return: Returns 0 if the opcode is stack. 1 if queue.
- */
-
-int parse_line(char *buffer, int line_number, int format)
-{
-	char *opcode, *value;
-	const char *delim = "\n ";
-
-	if (buffer == NULL)
-		err(4);
-
-	opcode = strtok(buffer, delim);
-	if (opcode == NULL)
-		return (format);
-	value = strtok(NULL, delim);
-
-	if (strcmp(opcode, "stack") == 0)
-		return (0);
-	if (strcmp(opcode, "queue") == 0)
-		return (1);
-
-	find_func(opcode, value, line_number, format);
-	return (format);
-}
-
-/**
- * find_func - find the appropriate function for the opcode
+ * giveFunc - find the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
- * @ln: line number
+ * @lineNum: line number
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_func(char *opcode, char *value, int ln, int format)
+void giveFunc(char *opcode, char *value, int lineNum, int format)
 {
 	int i;
 	int flag;
@@ -72,25 +40,25 @@ void find_func(char *opcode, char *value, int ln, int format)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, opcode, value, ln, format);
+			getFunc(func_list[i].f, opcode, value, lineNum, format);
 			flag = 0;
 		}
 	}
 	if (flag == 1)
-		err(3, ln, opcode);
+		err(3, lineNum, opcode);
 }
 
 
 /**
- * call_fun - Calls the required function.
+ * getFunc - Calls the required function.
  * @func: Pointer to the function that is about to be called.
  * @op: string representing the opcode.
  * @val: string representing a numeric value.
- * @ln: line numeber for the instruction.
+ * @lineNum: line numeber for the instruction.
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void call_fun(op_func func, char *op, char *val, int ln, int format)
+void getFunc(op_func func, char *op, char *val, int lineNum, int format)
 {
 	stack_t *node;
 	int flag;
@@ -105,18 +73,18 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 		if (val == NULL)
-			err(5, ln);
+			errors(5, lineNum);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				err(5, ln);
+				errors(5, lineNum);
 		}
 		node = create_node(atoi(val) * flag);
 		if (format == 0)
-			func(&node, ln);
+			func(&node, lineNum);
 		if (format == 1)
-			add_to_queue(&node, ln);
+			add_to_queue(&node, lineNum);
 	}
 	else
-		func(&head, ln);
+		func(&head, lineNum);
 }
