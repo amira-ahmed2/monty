@@ -14,7 +14,7 @@ int parseLine(char *buff, int linNumber, int format)
 	const char *del = "\n ";
 
 	if (buff == NULL)
-		err(4);
+		errors(4);
 
 	opcode = strtok(buff, del);
 	if (opcode == NULL)

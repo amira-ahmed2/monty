@@ -34,7 +34,7 @@ void errors(int errorCode, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	freeAllNode();
 	exit(EXIT_FAILURE);
 }
 
@@ -71,7 +71,7 @@ void moreError(int errorCode, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	freeAllNode();
 	exit(EXIT_FAILURE);
 }
 
@@ -97,6 +97,6 @@ void errString(int errorCode, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	freeAllNode();
 	exit(EXIT_FAILURE);
 }

@@ -45,7 +45,7 @@ void giveFunc(char *opcode, char *value, int lineNum, int format)
 		}
 	}
 	if (flag == 1)
-		err(3, lineNum, opcode);
+		errors(3, lineNum, opcode);
 }
 
 
