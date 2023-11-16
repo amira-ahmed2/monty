@@ -1,13 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
-#define _GNU_SOURCE
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
