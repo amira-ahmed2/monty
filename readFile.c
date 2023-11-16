@@ -14,8 +14,8 @@ void readFile(FILE *fd)
 
 	while (getline(&buff, &length, fd) != -1)
 	{
-		linNum++;
 		f = parseLine(buff, linNum, f);
+		linNum++;
 	}
 	
 	free(buff);
