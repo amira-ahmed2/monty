@@ -55,7 +55,8 @@ void pushStack(stack_t **node, __attribute__((unused))unsigned int ln);
 void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln);
 void pallStack(stack_t **node, unsigned int lineNum);
 void pintFun(stack_t **topNode, unsigned int lnNum);
-void nop(stack_t **topNode, unsigned int lnNum);
+void _nop(stack_t **topNode, unsigned int lnNum);
+void popStack(stack_t **topNode, unsigned int lnNum);
 
 
 

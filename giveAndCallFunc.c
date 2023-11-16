@@ -19,6 +19,8 @@ void giveFunc(char *opcode, char *value, int lineNum, int format)
 		{"pall", pallStack},
 		{"add", pushStack},
 		{"pint", pintFun},
+		{"pop", popStack},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 

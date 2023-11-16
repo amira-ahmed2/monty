@@ -14,11 +14,11 @@ void pintFun(stack_t **topNode, unsigned int lnNum)
 
 
 /**
- * nop - doesn’t do anything..
+ * _nop - doesn’t do anything..
  * @topNode: pointer top node in the stack.
  * @lnNum: int line number.
  */
-void nop(stack_t **topNode, unsigned int lnNum)
+void _nop(stack_t **topNode, unsigned int lnNum)
 {
 	(void)topNode;
 	(void)lnNum;
