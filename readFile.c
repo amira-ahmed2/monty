@@ -7,13 +7,13 @@
 
 void readFile(FILE *fd)
 {
-	int linNum, f = 0;
-	char *buff = NULL;
-	size_t length = 0;
+	int line_number, format = 0;
+	char *buffer = NULL;
+	size_t len = 0;
 
-	for (linNum = 1; getline(&buff, &length, fd) != -1; linNum++)
+	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
 	{
-		f = parseLine(buff, linNum, f);
+		format = parseLine(buffer, line_number, format);
 	}
-	free(buff);
+	free(buffer);
 }
