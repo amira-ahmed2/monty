@@ -5,11 +5,10 @@
  * @node:top node of the stack.
  * @lineNum: line number
  */
-void pallStack(stack_t **node, unsigned int lineNum)
+void pallStack(stack_t **node)
 {
 	stack_t *temp;
 
-	(void) lineNum;
 	if (node == NULL)
 		exit(EXIT_FAILURE);
 	temp = *node;
