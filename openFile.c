@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void openFile(char *fname);
+void openFile(char *fname)
 {
 	FILE *fd = fopen(fname, "r");
 

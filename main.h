@@ -52,8 +52,8 @@ void getFunc(operators_func func, char *op, char *val, int lineNum, int format);
 void giveFunc(char *opcode, char *value, int lineNum, int format);
 stack_t *createN(int num);
 void pushStack(stack_t **node, __attribute__((unused))unsigned int ln);
-void pallStack(stack_t **node, unsigned int ln);
 void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln);
+void pallStack(stack_t **node, unsigned int lineNum);
 
 
 
