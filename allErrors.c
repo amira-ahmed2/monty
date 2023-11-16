@@ -64,36 +64,6 @@ void moreError(int errorCode, ...)
 			opr = va_arg(argc, char *);
 			fprintf(stderr, "L%d: can't %s, stack too short\n", numLine, opr);
 			break;
-		case 9:
-			fprintf(stderr, "L%d: division by zero\n",
-				va_arg(argc, unsigned int));
-			break;
-		default:
-			break;
-	}
-	freeAllNode();
-	exit(EXIT_FAILURE);
-}
-
-/**
- * moreError - error messages.
- * @errorCode: The error codes
- */
-void errString(int errorCode, ...)
-{
-	va_list argc;
-	int numLine;
-
-	va_start(argc, errorCode);
-	numLine = va_arg(argc, int);
-	switch (errorCode)
-	{
-		case 10:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", numLine);
-			break;
-		case 11:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", numLine);
-			break;
 		default:
 			break;
 	}

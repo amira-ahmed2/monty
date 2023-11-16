@@ -45,7 +45,6 @@ void openFile(char *fname);
 void readFile(FILE *);
 void errors(int errorCode, ...);
 void moreError(int errorCode, ...);
-void errString(int errorCode, ...);
 int parseLine(char *buff, int linNumber, int format);
 void freeAllNode(void);
 void getFunc(operators_func func, char *op, char *val, int lineNum, int format);
