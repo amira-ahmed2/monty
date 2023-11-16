@@ -67,7 +67,7 @@ void getFunc(operators_func func, char *op, char *val, int lineNum, int format)
 			if (isdigit(val[i]) == 0)
 				errors(5, lineNum);
 		}
-		node = create_node(atoi(val) * flag);
+		node = createN(atoi(val) * flag);
 		if (format == 0)
 			func(&node, lineNum);
 		if (format == 1)
