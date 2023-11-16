@@ -48,7 +48,7 @@ void moreError(int errorCode, ...);
 void errString(int errorCode, ...);
 int parseLine(char *buff, int linNumber, int format);
 void freeAllNode(void);
-void getFunc(op_func func, char *op, char *val, int lineNum, int format);
+void getFunc(operators_func func, char *op, char *val, int lineNum, int format);
 void giveFunc(char *opcode, char *value, int lineNum, int format);
 stack_t *createN(int num);
 

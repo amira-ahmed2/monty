@@ -58,7 +58,7 @@ void giveFunc(char *opcode, char *value, int lineNum, int format)
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void getFunc(op_func func, char *op, char *val, int lineNum, int format)
+void getFunc(operators_func func, char *op, char *val, int lineNum, int format)
 {
 	stack_t *node;
 	int flag;
