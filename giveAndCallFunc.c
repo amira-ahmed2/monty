@@ -73,8 +73,6 @@ void getFunc(operators_func func, char *op, char *val, int lineNum, int format)
 		node = createN(atoi(val) * flag);
 		if (format == 0)
 			func(&node, lineNum);
-		if (format == 1)
-			add_to_queue(&node, lineNum);
 	}
 	else
 		func(&head, lineNum);
