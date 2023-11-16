@@ -13,7 +13,7 @@ void open_file(char *file_name)
 	if (file_name == NULL || fd == NULL)
 		err(2, file_name);
 
-	read_file(fd);
+	readFile(fd);
 	fclose(fd);
 }
 
@@ -24,7 +24,7 @@ void open_file(char *file_name)
  * Return: void
  */
 
-void read_file(FILE *fd)
+void readFile(FILE *fd)
 {
 	int line_number, format = 0;
 	char *buffer = NULL;

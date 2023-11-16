@@ -42,6 +42,7 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*operators_func)(stack_t **, unsigned int lin_num);
 void openFile(char *fname);
+void readFile(FILE *fd);
 void errors(int errorCode, ...);
 void moreError(int errorCode, ...);
 void errString(int errorCode, ...);
@@ -56,7 +57,6 @@ void pallStack(stack_t **node, unsigned int lineNum);
 
 void open_file(char *file_name);
 int parse_line(char *buffer, int line_number, int format);
-void read_file(FILE *);
 int len_chars(FILE *);
 void find_func(char *, char *, int, int);
 
