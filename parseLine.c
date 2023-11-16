@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * parseLine - Separates each line

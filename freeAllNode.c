@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 stack_t *head = NULL;
 /**
  * freeAllNode - Frees all node the stack.
